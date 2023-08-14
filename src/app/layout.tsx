@@ -1,5 +1,6 @@
 import './globals.css';
 import DashboardHeader from '@/components/DashboardHeader';
+import { ReduxProvider } from '@/store/provider/redux-provider';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -18,10 +19,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <div>
-                    <DashboardHeader />
-                </div>
-                <div>{children}</div>
+                <ReduxProvider>
+                    <div>
+                        <DashboardHeader />
+                    </div>
+                    <div>{children}</div>
+                </ReduxProvider>
             </body>
         </html>
     );
