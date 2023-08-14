@@ -23,6 +23,7 @@ export default function RootLayout({
                     <div>
                         <DashboardHeader />
                     </div>
+
                     <div>{children}</div>
                 </ReduxProvider>
             </body>
