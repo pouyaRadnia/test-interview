@@ -11,3 +11,8 @@ export interface Comment {
     email: string;
     body: string;
 }
+
+export type Create_Post = {
+    title: string;
+    body: string;
+};
