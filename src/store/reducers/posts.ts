@@ -7,8 +7,8 @@ export const postsApi = createApi({
         baseUrl: 'https://jsonplaceholder.typicode.com',
     }),
     endpoints: (builder) => ({
-        getPosts: builder.query<Post[], void>({
-            query: () => '/posts',
+        getPosts: builder.query<Post[], number | void>({
+            query: (page = 1) => `posts?_page=${page}&_limit=10`,
         }),
     }),
 });
