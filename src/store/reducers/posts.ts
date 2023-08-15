@@ -10,7 +10,10 @@ export const postsApi = createApi({
         getPosts: builder.query<Post[], number | void>({
             query: (page = 1) => `posts?_page=${page}&_limit=10`,
         }),
+        getPostComment: builder.query<Comment[], Post['id']>({
+            query: (id) => `posts/${id}/comments`,
+        }),
     }),
 });
 
-export const { useGetPostsQuery } = postsApi;
+export const { useGetPostsQuery, useGetPostCommentQuery } = postsApi;
